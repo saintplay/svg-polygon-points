@@ -1,0 +1,49 @@
+{
+  "name": "svg-polygon-points",
+  "version": "1.0.0",
+  "description": "Tiny library to manipulate SVG Polygon points",
+  "keywords": [
+    "html",
+    "svg",
+    "polygon",
+    "center"
+  ],
+  "author": {
+    "name": "Diego Jara",
+    "email": "saintplay96@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saintplay/saintplay/svg-polygon-points.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saintplay/saintplay/svg-polygon-points/issues"
+  },
+  "main": "dist/svg-polygon-points.min.js",
+  "typings": "index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "webpack --env build",
+    "dev": "webpack --progress --colors --watch --env dev",
+    "test": "mocha --require babel-core/register --colors ./test/*.spec.js",
+    "test:watch": "mocha --require babel-core/register --colors -w ./test/*.spec.js",
+    "lint": "eslint --fix src/"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.2",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.1.2",
+    "eslint": "^4.10.0",
+    "eslint-loader": "^1.9.0",
+    "mocha": "*",
+    "webpack": "^3.8.1",
+    "yargs": "^10.0.3"
+  },
+  "license": "MIT"
+}
