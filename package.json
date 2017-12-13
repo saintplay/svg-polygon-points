@@ -1,6 +1,6 @@
 {
   "name": "svg-polygon-points",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tiny library to manipulate SVG Polygon points",
   "keywords": [
     "html",
@@ -14,10 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saintplay/saintplay/svg-polygon-points.git"
+    "url": "git+https://github.com/saintplay/svg-polygon-points.git"
   },
   "bugs": {
-    "url": "https://github.com/saintplay/saintplay/svg-polygon-points/issues"
+    "url": "https://github.com/saintplay/svg-polygon-points/issues"
   },
   "main": "dist/svg-polygon-points.min.js",
   "typings": "index.d.ts",
