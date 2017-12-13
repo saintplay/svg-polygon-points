@@ -1,5 +1,9 @@
+import boundingBox from './boundingBox';
 import offset from './offset';
+import startIn from './startIn';
 
 export {
-  offset
+  boundingBox,
+  offset,
+  startIn
 };
