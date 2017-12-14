@@ -16,6 +16,10 @@
  * //=> "100,50 228,50 228,178 100,178"
  */
 export default function offset(points, horizontalOffset = 0, verticalOffset = 0) {
+  if (!points) {
+    return;
+  }
+
   const pointsArray = points.split(' ');
   const coordsArray = pointsArray.map(p => {
     const coord = p.split(',');

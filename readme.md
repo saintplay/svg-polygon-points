@@ -14,52 +14,31 @@ or
 ## Functions ##
 
 - add –  WIP
-- [`offset`](#offset) – Offset the polygon
-- scale - WIP
-- rotate - WIP
-- [`startIn`](#startIn) – Draw a polygon like HTML canvas
 - [`boundingBox`](#boundingBox) – Calculate the bouding box dimensions of a polygon
+- [`offset`](#offset) – Offset the polygon
+- [`rotate`](#rotate) - Rotates the polygon clockwise
+- scale - WIP
+- [`startIn`](#startIn) – Draw a polygon like HTML canvas
 
 
 ## Usage ##
 
-### offset ###
-
-```js
-const offset = require('svg-polygon-points').offset;
-// or
-import { offset } from 'svg-polygon-points';
-
-const points = "0,0 128,0 128,128 0,128"
-offset(points, 100, 50)
-//=> "100,50 228,50 228,178 100,178"
-```
-
-### startIn ###
-
-```js
-const startIn = require('svg-polygon-points').startIn;
-// or
-import { startIn } from 'svg-polygon-points';
-
-const points = startIn({ x: 50, y: 50 })
-  .drawTo({ direction: 'right', length: 150 })
-  .drawTo({ direction: 'down', length: 150 })
-  .drawTo({ direction: 'right', length: 150 })
-  .drawTo({ direction: 'down', length: 150 })
-  .drawTo({ direction: 'left', length: 150 })
-  .toPoints()
-//=> "50,50 200,50 200,200 350,200 350,350 50,350"
-```
 
 ### boundingBox ###
+
+`boundingBox(points)`  
+Get the bounding box
+
+#### {String} points - The polygon points to manipulate.
+
+#### Returns {Object} a { left, top, right, bottom, width, height. center } Object
 
 ```js
 const boundingBox = require('svg-polygon-points').boundingBox;
 // or
 import { boundingBox } from 'svg-polygon-points';
 
-var points = "28,224 256,224 256,352 128,352"
+const points = "28,224 256,224 256,352 128,352"
 boundingBox(points)
 /*=> {
     left: 28,
@@ -74,6 +53,77 @@ boundingBox(points)
     }
   }
 */
+```
+
+### offset ###
+
+`offset(points, angle, horizontalOffset, verticalOffset)`  
+Offsets the polygon points 
+
+#### {String} points - The polygon points to manipulate.
+#### {Number} horizontalOffset - The horizontal offset
+#### {Number} verticalOffset - The horizontal offset
+
+#### Returns {String} a polygons points string
+
+```js
+const offset = require('svg-polygon-points').offset;
+// or
+import { offset } from 'svg-polygon-points';
+
+const points = "0,0 128,0 128,128 0,128"
+offset(points, 100, 50)
+//=> "100,50 228,50 228,178 100,178"
+```
+
+### rotate ###
+
+`rotate(points, angle, [center])`  
+Rotates the polygon clockwise  
+
+#### {String} points - The polygon points to manipulate.
+#### {Number} angle - The angle degrees to rotate
+#### {Number} center - An { x, y } coord, If not especified, center of the bounding box will be used
+
+#### Returns {String} a polygons points string
+
+```js
+const rotate = require('svg-polygon-points').rotate;
+// or
+import { rotate } from 'svg-polygon-points';
+
+const points = "0,0 48,0 48,64 96,64 96,128 0,128"
+rotate(points, 90)
+//=> "112,16 112,64 48,64 48,112 -16,112 -16,16"
+```
+
+### startIn ###
+
+`startIn(coord)`  
+Creates a Draw Object  
+
+#### {Object} coord - A { x, y } Object
+
+#### Returns {Draw} a Draw Object
+
+#### Draw methods
+
+- **drawTo({ direction, length })**
+- **toPoints()**
+
+```js
+const startIn = require('svg-polygon-points').startIn;
+// or
+import { startIn } from 'svg-polygon-points';
+
+const points = startIn({ x: 50, y: 50 })
+  .drawTo({ direction: 'right', length: 150 })
+  .drawTo({ direction: 'down', length: 150 })
+  .drawTo({ direction: 'right', length: 150 })
+  .drawTo({ direction: 'down', length: 150 })
+  .drawTo({ direction: 'left', length: 150 })
+  .toPoints()
+//=> "50,50 200,50 200,200 350,200 350,350 50,350"
 ```
 
 ## License ##

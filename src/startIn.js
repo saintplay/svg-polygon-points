@@ -16,5 +16,9 @@ import Draw from './Draw';
  * //=> {Draw Object}
  */
 export default function startIn(coord) {
+  if (!coord) {
+    return;
+  }
+
   return new Draw(coord);
 }
