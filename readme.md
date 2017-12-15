@@ -19,6 +19,7 @@ or
 - [`rotate`](#rotate) - Rotates the polygon clockwise
 - scale - WIP
 - [`startIn`](#startIn) – Draw a polygon like HTML canvas
+- [`toGeoJSON`](#toGeoJSON) – Returns the respective GeoJSON Array Coords
 
 
 ## Usage ##
@@ -124,6 +125,25 @@ const points = startIn({ x: 50, y: 50 })
   .drawTo({ direction: 'left', length: 150 })
   .toPoints()
 //=> "50,50 200,50 200,200 350,200 350,350 50,350"
+```
+
+### toGeoJSON ###
+
+`toGeoJSON(points)`  
+Returns the respective GeoJSON Array Coords  
+
+#### {String} points - The polygon points to manipulate.
+
+#### Returns {Array} a Coordinates Array
+
+```js
+const toGeoJSON = require('svg-polygon-points').toGeoJSON;
+// or
+import { toGeoJSON } from 'svg-polygon-points';
+
+const points = "0,0 128,0 128,128 0,128"
+toGeoJSON(points)
+//=> [ [[100,50], [228,50], [228,178], [100,178]] ]
 ```
 
 ## License ##
