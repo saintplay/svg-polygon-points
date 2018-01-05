@@ -14,12 +14,13 @@ or
 ## Functions ##
 
 - add –  WIP
-- [`boundingBox`](#boundingBox) – Calculate the bouding box dimensions of a polygon
-- [`offset`](#offset) – Offset the polygon
-- [`rotate`](#rotate) - Rotates the polygon clockwise
+- [`Bounding Box`](#bounding-box) – Calculate the bouding box dimensions of a polygon
+- [`Offset`](#offset) – Offset the polygon
+- [`Rotate`](#rotate) - Rotates the polygon clockwise
 - scale - WIP
-- [`startIn`](#startIn) – Draw a polygon like HTML canvas
-- [`toGeoJSON`](#toGeoJSON) – Returns the respective GeoJSON Array Coords
+- [`Start In`](#start-in) – Draw a polygon like HTML canvas
+- [`From Geo JSON`](#to-geo-json) – Transform GeoJSON coords to SVG Polygon's points
+- [`To Geo JSON`](#to-geo-json) – Returns the respective GeoJSON Array Coords
 
 
 ## Usage ##
@@ -125,6 +126,25 @@ const points = startIn({ x: 50, y: 50 })
   .drawTo({ direction: 'left', length: 150 })
   .toPoints()
 //=> "50,50 200,50 200,200 350,200 350,350 50,350"
+```
+
+### fromGeoJSON ###
+
+`fromGeoJSON(points)`  
+Transform GeoJSON coords to SVG Polygon's points
+
+#### {Array} a GeoJSON Coordinates Array
+#### returns {String} the polygon points.
+
+
+```js
+const fromGeoJSON = require('svg-polygon-points').fromGeoJSON;
+// or
+import { fromGeoJSON } from 'svg-polygon-points';
+
+const coords = "[ [[100,50], [228,50], [228,178], [100,178]] ]"
+fromGeoJSON(coords)
+//=> "100,50 228,50 228,178 100,178"
 ```
 
 ### toGeoJSON ###

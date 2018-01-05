@@ -10,7 +10,7 @@
  *
  * @example
  * var points = "0,0 128,0 128,128 0,128"
- * toGeoJSON(points, 100, 50)
+ * toGeoJSON(points)
  * //=> "[ [[100,50], [228,50], [228,178], [100,178]] ]"
  */
 export default function toGeoJSON(points) {
