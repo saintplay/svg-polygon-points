@@ -19,14 +19,14 @@ or
 - [`Rotate`](#rotate) - Rotates the polygon clockwise
 - scale - WIP
 - [`Start In`](#start-in) – Draw a polygon like HTML canvas
-- [`From Geo JSON`](#to-geo-json) – Transform GeoJSON coords to SVG Polygon's points
+- [`From Geo JSON`](#from-geo-json) – Transform GeoJSON coords to SVG Polygon's points
 - [`To Geo JSON`](#to-geo-json) – Returns the respective GeoJSON Array Coords
 
 
 ## Usage ##
 
 
-### boundingBox ###
+### Bounding Box ###
 
 `boundingBox(points)`  
 Get the bounding box
@@ -57,7 +57,7 @@ boundingBox(points)
 */
 ```
 
-### offset ###
+### Offset ###
 
 `offset(points, angle, horizontalOffset, verticalOffset)`  
 Offsets the polygon points 
@@ -78,7 +78,7 @@ offset(points, 100, 50)
 //=> "100,50 228,50 228,178 100,178"
 ```
 
-### rotate ###
+### Rotate ###
 
 `rotate(points, angle, [center])`  
 Rotates the polygon clockwise  
@@ -99,7 +99,7 @@ rotate(points, 90)
 //=> "112,16 112,64 48,64 48,112 -16,112 -16,16"
 ```
 
-### startIn ###
+### Start In ###
 
 `startIn(coord)`  
 Creates a Draw Object  
@@ -128,7 +128,7 @@ const points = startIn({ x: 50, y: 50 })
 //=> "50,50 200,50 200,200 350,200 350,350 50,350"
 ```
 
-### fromGeoJSON ###
+### From Geo JSON ###
 
 `fromGeoJSON(points)`  
 Transform GeoJSON coords to SVG Polygon's points
@@ -147,7 +147,7 @@ fromGeoJSON(coords)
 //=> "100,50 228,50 228,178 100,178"
 ```
 
-### toGeoJSON ###
+### To Geo JSON ###
 
 `toGeoJSON(points)`  
 Returns the respective GeoJSON Array Coords  

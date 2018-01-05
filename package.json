@@ -1,6 +1,6 @@
 {
   "name": "svg-polygon-points",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Tiny library to manipulate SVG Polygon points",
   "keywords": [
     "html",
